@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Global Education Summit | Breaking Barriers</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* Modern CSS Variables */
+      :root {
+        --primary: #1a5276;
+        --primary-dark: #0e3a5c;
+        --primary-light: #2c7cb0;
+        --secondary: #ffd700;
+        --accent: #e74c3c;
+        --light: #f8f9fa;
+        --dark: #2c3e50;
+        --gray: #6c757d;
+        --light-gray: #e9ecef;
+        --white: #ffffff;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        --transition: all 0.3s ease;
+        --border-radius: 12px;
+        --section-padding: 80px 0;
+      }
+
+      /* Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        line-height: 1.6;
+        color: var(--dark);
+        background-color: var(--light);
+        overflow-x: hidden;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+      section {
+        padding: var(--section-padding);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        margin-bottom: 1rem;
+        color: var(--dark);
+        font-weight: 700;
+        line-height: 1.2;
+      }
+
+      h1 {
+        font-size: 3.5rem;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 3rem;
+        position: relative;
+      }
+
+      h2:after {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 5px;
+        background: var(--secondary);
+        margin: 15px auto;
+        border-radius: 5px;
+      }
+
+      h3 {
+        font-size: 1.8rem;
+      }
+
+      p {
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 28px;
+        background: var(--primary);
+        color: var(--white);
+        text-decoration: none;
+        border-radius: 50px;
+        transition: var(--transition);
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 1rem;
+        box-shadow: 0 4px 15px rgba(26, 82, 118, 0.3);
+      }
+
+      .btn:hover {
+        background: var(--primary-dark);
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(26, 82, 118, 0.4);
+      }
+
+      .btn-secondary {
+        background: var(--secondary);
+        color: var(--dark);
+      }
+
+      .btn-secondary:hover {
+        background: #e6c200;
+      }
+
+      .btn-outline {
+        background: transparent;
+        border: 2px solid var(--primary);
+        color: var(--primary);
+      }
+
+      .btn-outline:hover {
+        background: var(--primary);
+        color: var(--white);
+      }
+
+      /* Header Styles */
+      header {
+        background: linear-gradient(
+            135deg,
+            rgba(26, 82, 118, 0.95) 0%,
+            rgba(44, 124, 176, 0.9) 100%
+          ),
+          url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80");
+        background-size: cover;
+        background-position: center;
+        color: var(--white);
+        padding: 120px 0 100px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      header:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: linear-gradient(to bottom, transparent, var(--light));
+        z-index: 1;
+      }
+
+      .header-content {
+        max-width: 900px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+      }
+
+      .header-content h1 {
+        color: var(--white);
+        margin-bottom: 1.5rem;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .header-content .subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        font-weight: 300;
+      }
+
+      .date-venue {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        padding: 25px;
+        border-radius: var(--border-radius);
+        margin: 40px 0;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .date-venue h3 {
+        color: var(--secondary);
+      }
+
+      /* About Section */
+      .about {
+        background: var(--white);
+      }
+
+      .about-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 50px;
+        align-items: center;
+      }
+
+      .about-text {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .about-image {
+        flex: 1;
+        min-width: 300px;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transform: rotate(-2deg);
+        transition: var(--transition);
+      }
+
+      .about-image:hover {
+        transform: rotate(0deg);
+      }
+
+      .about-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .outcomes-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-top: 30px;
+      }
+
+      .outcome-card {
+        background: var(--light);
+        padding: 25px;
+        border-radius: var(--border-radius);
+        text-align: center;
+        transition: var(--transition);
+        border-left: 4px solid var(--primary);
+      }
+
+      .outcome-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow);
+      }
+
+      .outcome-icon {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 15px;
+      }
+
+      /* Themes Section */
+      .themes {
+        background: var(--light);
+      }
+
+      .theme-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+      }
+
+      .theme-card {
+        background: var(--white);
+        padding: 40px 30px;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        text-align: center;
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .theme-card:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: var(--primary);
+      }
+
+      .theme-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .theme-icon {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+        color: var(--primary);
+      }
+
+      /* Speakers Section */
+      .speakers {
+        background: var(--white);
+      }
+
+      .speakers-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 30px;
+      }
+
+      .speaker-card {
+        background: var(--white);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        position: relative;
+      }
+
+      .speaker-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .speaker-image {
+        height: 280px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .speaker-image:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+      }
+
+      .speaker-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: var(--transition);
+      }
+
+      .speaker-card:hover .speaker-image img {
+        transform: scale(1.1);
+      }
+
+      .speaker-info {
+        padding: 25px;
+      }
+
+      .speaker-role {
+        color: var(--primary);
+        font-weight: 600;
+        margin-bottom: 15px;
+        font-size: 1rem;
+      }
+
+      .speaker-bio {
+        color: var(--gray);
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      /* Modern Full-Screen Modal */
+      .speaker-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        z-index: 1000;
+        padding: 0;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .speaker-modal.active {
+        opacity: 1;
+      }
+
+      .modal-content {
+        background: var(--white);
+        width: 90%;
+        height: 90%;
+        margin: 2% auto;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        transform: scale(0.9);
+        transition: transform 0.4s ease;
+      }
+
+      .speaker-modal.active .modal-content {
+        transform: scale(1);
+      }
+
+      .modal-header {
+        background: var(--primary);
+        color: var(--white);
+        padding: 25px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+      }
+
+      .modal-header:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: var(--secondary);
+      }
+
+      .close-modal {
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        color: var(--white);
+        font-size: 1.8rem;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .close-modal:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: rotate(90deg);
+      }
+
+      .modal-body {
+        padding: 0;
+        flex: 1;
+        overflow-y: auto;
+        display: flex;
+      }
+
+      .modal-speaker-content {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 100%;
+      }
+
+      .modal-speaker-image {
+        flex: 1;
+        min-width: 350px;
+        background: var(--light-gray);
+        display: flex;
+        padding: 40px;
+      }
+
+      .modal-speaker-image img {
+        width: 100%;
+        max-width: 400px;
+        height: fit-content;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+      }
+
+      .modal-speaker-info {
+        flex: 2;
+        min-width: 400px;
+        padding: 40px;
+        overflow-y: auto;
+      }
+
+      .key-points {
+        background: var(--light);
+        padding: 25px;
+        border-radius: var(--border-radius);
+        margin-bottom: 25px;
+        border-left: 5px solid var(--primary);
+      }
+
+      .key-points ul {
+        list-style-type: none;
+      }
+
+      .key-points li {
+        margin-bottom: 12px;
+        padding-left: 25px;
+        position: relative;
+      }
+
+      .key-points li:before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--primary);
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+
+      .speaker-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 25px;
+      }
+
+      /* Program Section */
+      .program {
+        background: var(--light);
+      }
+
+      .program-timeline {
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .program-timeline:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 30px;
+        height: 100%;
+        width: 3px;
+        background: var(--primary);
+      }
+
+      .program-item {
+        background: var(--white);
+        padding: 25px;
+        margin-bottom: 30px;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        display: flex;
+        align-items: center;
+        position: relative;
+        margin-left: 70px;
+      }
+
+      .program-item:before {
+        content: "";
+        position: absolute;
+        left: -40px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: var(--primary);
+        border: 5px solid var(--light);
+      }
+
+      .program-time {
+        background: var(--primary);
+        color: var(--white);
+        padding: 12px 20px;
+        border-radius: 50px;
+        font-weight: 600;
+        margin-right: 25px;
+        min-width: 140px;
+        text-align: center;
+        flex-shrink: 0;
+      }
+
+      /* Contact Section */
+      .contact {
+        background: var(--white);
+        text-align: center;
+      }
+
+      .contact-info {
+        max-width: 600px;
+        margin: 0 auto 40px;
+        background: var(--light);
+        padding: 30px;
+        border-radius: var(--border-radius);
+      }
+
+      /* Footer */
+      footer {
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--primary-dark) 100%
+        );
+        color: var(--white);
+        padding: 40px 0 20px;
+        text-align: center;
+      }
+
+      .footer-content {
+        margin-bottom: 30px;
+      }
+
+      .footer-logo {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+      }
+
+      .footer-tagline {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+        opacity: 0.9;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding-top: 20px;
+        font-size: 0.9rem;
+        opacity: 0.8;
+      }
+
+      /* Responsive */
+      @media (max-width: 992px) {
+        h1 {
+          font-size: 2.8rem;
+        }
+
+        h2 {
+          font-size: 2.2rem;
+        }
+
+        .modal-speaker-content {
+          flex-direction: column;
+        }
+
+        .modal-speaker-image,
+        .modal-speaker-info {
+          min-width: 100%;
+        }
+
+        .modal-speaker-image {
+          padding: 30px;
+        }
+
+        .modal-speaker-info {
+          padding: 30px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2.3rem;
+        }
+
+        h2 {
+          font-size: 1.9rem;
+        }
+
+        section {
+          padding: 60px 0;
+        }
+
+        .program-item {
+          flex-direction: column;
+          align-items: flex-start;
+          margin-left: 50px;
+        }
+
+        .program-time {
+          margin-right: 0;
+          margin-bottom: 15px;
+        }
+
+        .modal-content {
+          width: 95%;
+          height: 95%;
+          margin: 2.5% auto;
+        }
+
+        .modal-speaker-info {
+          padding: 25px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .header-content {
+          padding: 0 10px;
+        }
+
+        .btn {
+          width: 100%;
+          justify-content: center;
+        }
+
+        .speakers-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .modal-speaker-info {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <h1>Global Education Summit</h1>
+          <p class="subtitle">
+            "Breaking Barriers: Empowering Out-of-School Children through
+            Education"
+          </p>
+          <p>Organized by African British Business Forum</p>
+
+          <div class="date-venue">
+            <h3>
+              <i class="far fa-calendar-alt"></i> Day 1: 27th November 2025,
+              1:30-3:00 PM
+            </h3>
+            <p><i class="fas fa-map-marker-alt"></i> Parliament, London</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+      <div class="container">
+        <h2>About the Summit</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              The Global Education Summit aims to raise awareness about the
+              plight of out-of-school children and street children, and to
+              propose sustainable solutions to ensure access to quality
+              education for all.
+            </p>
+            <p>
+              The summit will bring together dignitaries, policymakers,
+              educators, and stakeholders from around the world to share
+              experiences, best practices, and innovative solutions.
+            </p>
+
+            <div class="outcomes-grid">
+              <div class="outcome-card">
+                <div class="outcome-icon">
+                  <i class="fas fa-file-signature"></i>
+                </div>
+                <h4>Consensus Statement</h4>
+                <p>
+                  A joint declaration outlining key actions to address
+                  out-of-school children.
+                </p>
+              </div>
+              <div class="outcome-card">
+                <div class="outcome-icon"><i class="fas fa-sitemap"></i></div>
+                <h4>Solution Framework</h4>
+                <p>
+                  Policy recommendations and innovative solutions to achieve
+                  education for all.
+                </p>
+              </div>
+              <div class="outcome-card">
+                <div class="outcome-icon"><i class="fas fa-handshake"></i></div>
+                <h4>Partnerships</h4>
+                <p>
+                  New collaborations to support education initiatives for
+                  out-of-school children.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="about-image">
+            <img src="about.jpg" alt="Education for all" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Themes Section -->
+    <section class="themes" id="themes">
+      <div class="container">
+        <h2>Key Themes</h2>
+        <div class="theme-cards">
+          <div class="theme-card">
+            <div class="theme-icon"><i class="fas fa-search"></i></div>
+            <h3>Breaking Barriers</h3>
+            <p>
+              Identifying challenges and obstacles that prevent out-of-school
+              children from accessing education.
+            </p>
+          </div>
+          <div class="theme-card">
+            <div class="theme-icon"><i class="fas fa-lightbulb"></i></div>
+            <h3>Innovative Solutions</h3>
+            <p>
+              Showcasing successful initiatives and models that have improved
+              education outcomes for marginalized children.
+            </p>
+          </div>
+          <div class="theme-card">
+            <div class="theme-icon"><i class="fas fa-file-alt"></i></div>
+            <h3>Policy and Advocacy</h3>
+            <p>
+              Strengthening policy frameworks and advocacy efforts to ensure
+              education for all.
+            </p>
+          </div>
+          <div class="theme-card">
+            <div class="theme-icon"><i class="fas fa-handshake"></i></div>
+            <h3>Partnerships</h3>
+            <p>
+              Fostering partnerships between governments, NGOs, private sector,
+              and civil society to achieve SDG 4.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Speakers Section -->
+    <section class="speakers" id="speakers">
+      <div class="container">
+        <h2>Featured Speakers</h2>
+        <div class="speakers-grid">
+          <!-- Speaker 1 -->
+          <div class="speaker-card">
+            <div class="speaker-image">
+              <img
+                src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                alt="H.E. Karisa Nzai Menza"
+              />
+            </div>
+            <div class="speaker-info">
+              <h3>H.E. Karisa Nzai Menza</h3>
+              <p class="speaker-role">
+                Political Affairs Advisor, Executive Office of the President of
+                Kenya
+              </p>
+              <p class="speaker-bio">
+                A Kenyan public official who plays a key role in advising the
+                President on political matters and promoting the government's
+                agenda, particularly in the Coast region of Kenya.
+              </p>
+              <button class="btn btn-secondary read-more" data-speaker="karisa">
+                <i class="fas fa-arrow-right"></i> Read More
+              </button>
+            </div>
+          </div>
+
+          <!-- Speaker 2 -->
+          <div class="speaker-card">
+            <div class="speaker-image">
+              <img
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                alt="Patrick Passley"
+              />
+            </div>
+            <div class="speaker-info">
+              <h3>Patrick Passley LVO</h3>
+              <p class="speaker-role">
+                Education Management & Diversity Consultant
+              </p>
+              <p class="speaker-bio">
+                Retired British boxer, ABA super-heavyweight champion, Education
+                Management and Diversity Consultant, professional fundraiser,
+                and Lieutenant of the Royal Victorian Order.
+              </p>
+              <button
+                class="btn btn-secondary read-more"
+                data-speaker="patrick"
+              >
+                <i class="fas fa-arrow-right"></i> Read More
+              </button>
+            </div>
+          </div>
+
+          <!-- Speaker 3 -->
+          <div class="speaker-card">
+            <div class="speaker-image">
+              <img
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                alt="Baroness Sandip Verma"
+              />
+            </div>
+            <div class="speaker-info">
+              <h3>Baroness Sandip Verma</h3>
+              <p class="speaker-role">
+                Member of House of Lords, Chancellor of University of Roehampton
+              </p>
+              <p class="speaker-bio">
+                British Indian politician, businesswoman, and life peer who
+                chairs the UN Women's National Committee UK and serves as
+                Ministerial Champion for Tackling Violence Against Women and
+                Girls Overseas.
+              </p>
+              <button class="btn btn-secondary read-more" data-speaker="verma">
+                <i class="fas fa-arrow-right"></i> Read More
+              </button>
+            </div>
+          </div>
+
+          <!-- Speaker 4 -->
+          <div class="speaker-card">
+            <div class="speaker-image">
+              <img
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                alt="Ian Turner"
+              />
+            </div>
+            <div class="speaker-info">
+              <h3>Ian Turner</h3>
+              <p class="speaker-role">
+                Royal Expert & International TV Broadcaster
+              </p>
+              <p class="speaker-bio">
+                Award-winning international TV broadcaster and journalist with
+                over 15 years on screen and more than 3,000 TV appearances
+                worldwide providing insights on the Royal Family.
+              </p>
+              <button class="btn btn-secondary read-more" data-speaker="ian">
+                <i class="fas fa-arrow-right"></i> Read More
+              </button>
+            </div>
+          </div>
+
+          <!-- Speaker 5 -->
+          <div class="speaker-card">
+            <div class="speaker-image">
+              <img
+                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                alt="Dr Yvonne Thompson"
+              />
+            </div>
+            <div class="speaker-info">
+              <h3>Dr Yvonne Thompson CBE DL</h3>
+              <p class="speaker-role">
+                Entrepreneur, Author & International Speaker
+              </p>
+              <p class="speaker-bio">
+                Prominent entrepreneur, author, and international speaker known
+                for her work in business, diversity, and equality. Founder of
+                Choice FM and WinTrade Global Network.
+              </p>
+              <button class="btn btn-secondary read-more" data-speaker="yvonne">
+                <i class="fas fa-arrow-right"></i> Read More
+              </button>
+            </div>
+          </div>
+
+          <!-- Speaker 6 -->
+          <div class="speaker-card">
+            <div class="speaker-image">
+              <img
+                src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                alt="Sabrina Ben Salmi"
+              />
+            </div>
+            <div class="speaker-info">
+              <h3>Sabrina Ben Salmi</h3>
+              <p class="speaker-role">
+                Business & Personal Development Consultant
+              </p>
+              <p class="speaker-bio">
+                Distinguished business and personal development consultant, RSA
+                Fellow, Publisher, multiple award winner, UN Women UK Delegate,
+                and Founder of 'Dreaming Big Together' program.
+              </p>
+              <button
+                class="btn btn-secondary read-more"
+                data-speaker="sabrina"
+              >
+                <i class="fas fa-arrow-right"></i> Read More
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Speaker Detail Modals -->
+    <!-- Karisa Nzai Menza Modal -->
+    <div class="speaker-modal" id="karisa-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>H.E. Karisa Nzai Menza</h2>
+          <button class="close-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-speaker-content">
+            <div class="modal-speaker-image">
+              <img
+                src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                alt="H.E. Karisa Nzai Menza"
+              />
+            </div>
+            <div class="modal-speaker-info">
+              <h3>
+                Political Affairs Advisor, Executive Office of the President of
+                Kenya
+              </h3>
+              <div class="speaker-bio">
+                <p>
+                  H.E. Karisa Nzai Menza is a Kenyan public official who
+                  currently serves as the Political Affairs Advisor in the
+                  Executive Office of the President of Kenya, H.E. William Ruto.
+                </p>
+                <p>
+                  As the Political Affairs Advisor, he plays a key role in
+                  advising the President on political matters and promoting the
+                  government's agenda, particularly in the Coast region of
+                  Kenya.
+                </p>
+              </div>
+
+              <div class="key-points">
+                <h4>Key Roles & Responsibilities</h4>
+                <ul>
+                  <li>Political Affairs Advisor to the President of Kenya</li>
+                  <li>Active political figure in the Coast region of Kenya</li>
+                  <li>Engages with local leaders and community groups</li>
+                  <li>Advocates for regional support of national government</li>
+                  <li>Former aspirant for Jomvu constituency MP seat</li>
+                </ul>
+              </div>
+
+              <div class="key-points">
+                <h4>Key Statements & Advocacy</h4>
+                <ul>
+                  <li>
+                    Urges Coast leaders to work with the Kenya Kwanza government
+                  </li>
+                  <li>Advocates for unity among Kenyans</li>
+                  <li>Promotes vigilance against issues like cyberbullying</li>
+                  <li>
+                    Focuses on ensuring the Coast region benefits from national
+                    development
+                  </li>
+                </ul>
+              </div>
+
+              <p>
+                The honorific "H.E." (His Excellency) is often used in the
+                context of his high-ranking advisory role within the Executive
+                Office of the President.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Patrick Passley Modal -->
+    <div class="speaker-modal" id="patrick-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Patrick Passley LVO</h2>
+          <button class="close-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-speaker-content">
+            <div class="modal-speaker-image">
+              <img
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                alt="Patrick Passley"
+              />
+            </div>
+            <div class="modal-speaker-info">
+              <h3>Education Management & Diversity Consultant</h3>
+              <div class="speaker-bio">
+                <p>
+                  Patrick Passley, also known as Pat Passley, is a retired
+                  British boxer who won the prestigious ABA super-heavyweight
+                  championship in 1989. He is also an Education Management and
+                  Diversity Consultant, a professional fundraiser, and a
+                  personal advisor.
+                </p>
+                <p>
+                  The LVO in his name stands for Lieutenant of the Royal
+                  Victorian Order, an honour granted for personal service to the
+                  monarch.
+                </p>
+              </div>
+
+              <div class="key-points">
+                <h4>Career Highlights</h4>
+                <ul>
+                  <li>ABA Super-Heavyweight Champion (1989)</li>
+                  <li>Represented England at 1990 Commonwealth Games</li>
+                  <li>Education Management & Diversity Consultant</li>
+                  <li>Professional Fundraiser</li>
+                  <li>Lieutenant of the Royal Victorian Order (LVO)</li>
+                </ul>
+              </div>
+
+              <div class="key-points">
+                <h4>Professional Roles</h4>
+                <ul>
+                  <li>
+                    Consultant/Advisor in Education Management and Diversity
+                  </li>
+                  <li>Professional and litigation fundraiser</li>
+                  <li>
+                    Trustee for various organizations including Equality 4 Black
+                    Nurses
+                  </li>
+                  <li>Senior Advisor roles</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Baroness Sandip Verma Modal -->
+    <div class="speaker-modal" id="verma-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Baroness Sandip Verma</h2>
+          <button class="close-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-speaker-content">
+            <div class="modal-speaker-image">
+              <img
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                alt="Baroness Sandip Verma"
+              />
+            </div>
+            <div class="modal-speaker-info">
+              <h3>
+                Member of House of Lords, Chancellor of University of Roehampton
+              </h3>
+              <div class="speaker-bio">
+                <p>
+                  Baroness Sandip Verma is a British Indian politician,
+                  businesswoman, and life peer who currently sits as a
+                  Conservative member in the House of Lords.
+                </p>
+                <p>
+                  Born in Amritsar, Punjab, India, in 1959, she moved to the UK
+                  as a child. She is an advocate for equality, diversity, and
+                  inclusion and has received several awards, including one from
+                  the President of India in 2011 for her contributions to public
+                  affairs and promoting the interests of overseas Indians.
+                </p>
+              </div>
+
+              <div class="key-points">
+                <h4>Current Roles</h4>
+                <ul>
+                  <li>Member of the House of Lords (since 2006)</li>
+                  <li>
+                    Chancellor of the University of Roehampton (since 2022)
+                  </li>
+                  <li>Chair of the UN Women's National Committee UK</li>
+                  <li>
+                    Ministerial Champion for Tackling Violence Against Women and
+                    Girls Overseas (since 2019)
+                  </li>
+                  <li>Businesswoman with directorships in private sector</li>
+                </ul>
+              </div>
+
+              <div class="key-points">
+                <h4>Past Government Service</h4>
+                <ul>
+                  <li>
+                    Parliamentary Under-Secretary of State for International
+                    Development (2015–2016)
+                  </li>
+                  <li>
+                    Parliamentary Under-Secretary of State for Energy and
+                    Climate Change (2012–2015)
+                  </li>
+                  <li>Government Whip/Baroness-in-waiting (2010–2012)</li>
+                </ul>
+              </div>
+
+              <p>
+                She started her first business at age 19 in high fashion and
+                later moved into the service sector. She holds directorships and
+                advisory roles in the private sector, focusing on areas like ESG
+                funds and green projects.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ian Turner Modal -->
+    <div class="speaker-modal" id="ian-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Ian Turner</h2>
+          <button class="close-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-speaker-content">
+            <div class="modal-speaker-image">
+              <img
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                alt="Ian Turner"
+              />
+            </div>
+            <div class="modal-speaker-info">
+              <h3>Royal Expert & International TV Broadcaster</h3>
+              <div class="speaker-bio">
+                <p>
+                  Ian Turner is an award-winning international TV broadcaster
+                  and journalist, known professionally as Ian Pelham Turner, who
+                  is a renowned expert and commentator on the British Royal
+                  Family. He is also a veteran royal and celebrity photographer.
+                </p>
+              </div>
+
+              <div class="key-points">
+                <h4>Career Highlights</h4>
+                <ul>
+                  <li>
+                    Over 15 years on screen with 3,000+ TV appearances worldwide
+                  </li>
+                  <li>
+                    Royal expert for major networks including BBC, NBC, CNN,
+                    Sky, and Fox Media U.S.
+                  </li>
+                  <li>Journalism career spanning over 50 years</li>
+                  <li>
+                    Co-hosts The Royally Rich Lifestyle Show with Helena Chard
+                  </li>
+                  <li>Patron of the Universal Peace Federation (UPF) UK</li>
+                </ul>
+              </div>
+
+              <div class="key-points">
+                <h4>Notable Achievements</h4>
+                <ul>
+                  <li>Began career as apprentice photo-journalist in 1966</li>
+                  <li>
+                    First commissioned photograph of the Royals (Princess
+                    Margaret) at age 16
+                  </li>
+                  <li>Extensive work as news and investigative journalist</li>
+                  <li>
+                    Covered global events and met numerous celebrities and
+                    political figures
+                  </li>
+                  <li>
+                    Speaks on media bias, community affairs, and supporting
+                    diverse communities
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dr Yvonne Thompson Modal -->
+    <div class="speaker-modal" id="yvonne-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Dr Yvonne Thompson CBE DL</h2>
+          <button class="close-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-speaker-content">
+            <div class="modal-speaker-image">
+              <img
+                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                alt="Dr Yvonne Thompson"
+              />
+            </div>
+            <div class="modal-speaker-info">
+              <h3>Entrepreneur, Author & International Speaker</h3>
+              <div class="speaker-bio">
+                <p>
+                  Dr Yvonne Thompson CBE DL is a prominent entrepreneur, author,
+                  and international speaker known for her work in business,
+                  diversity, and equality. She is a leading figure in promoting
+                  women's entrepreneurship and Black and ethnic minority
+                  businesses in the UK and globally.
+                </p>
+              </div>
+
+              <div class="key-points">
+                <h4>Key Achievements</h4>
+                <ul>
+                  <li>
+                    Founding director of Choice FM, UK's first Black music radio
+                    station
+                  </li>
+                  <li>Founder of WinTrade Global Women In Business Network</li>
+                  <li>
+                    Founder of ASAP Communications, first Black-owned PR company
+                    in UK
+                  </li>
+                  <li>
+                    Author of "7 Traits of Highly Successful Women on Boards"
+                  </li>
+                  <li>
+                    Commander of the Order of the British Empire (CBE) in 2003
+                  </li>
+                </ul>
+              </div>
+
+              <div class="key-points">
+                <h4>Current Leadership Roles</h4>
+                <ul>
+                  <li>
+                    President of the Association for Project Management (APM)
+                  </li>
+                  <li>
+                    Chair of OKRE.org, charity focused on effects of
+                    entertainment and media
+                  </li>
+                  <li>Deputy Lieutenant (DL) for Greater London</li>
+                  <li>
+                    Sought-after international speaker and leadership coach
+                  </li>
+                </ul>
+              </div>
+
+              <div class="key-points">
+                <h4>Past Public Service</h4>
+                <ul>
+                  <li>Chaired London Central Learning and Skills Council</li>
+                  <li>Chaired DTI's Ethnic Minority Business Forum</li>
+                  <li>Served on advisory panel for Ofcom</li>
+                  <li>
+                    Received two honorary doctorates and honorary fellowship
+                    from King's College London
+                  </li>
+                </ul>
+              </div>
+
+              <p>
+                Dr Thompson is a prominent advocate for inclusive leadership,
+                entrepreneurship, and cultural transformation, working to break
+                down barriers for women and minority groups in the business
+                world.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sabrina Ben Salmi Modal -->
+    <div class="speaker-modal" id="sabrina-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Sabrina Ben Salmi</h2>
+          <button class="close-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-speaker-content">
+            <div class="modal-speaker-image">
+              <img
+                src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                alt="Sabrina Ben Salmi"
+              />
+            </div>
+            <div class="modal-speaker-info">
+              <h3>Business & Personal Development Consultant</h3>
+              <div class="speaker-bio">
+                <p>
+                  Sabrina Ben Salmi BSc, FRSA, is a distinguished business and
+                  personal development consultant, RSA Fellow, Publisher,
+                  multiple award winner, UN Women UK Delegate, Education
+                  Advisor, Founder of the Unheard Cries of A Mother, acclaimed
+                  author, and dynamic International Keynote Speaker.
+                </p>
+                <p>
+                  As the founder of the 'Dreaming Big Together' transformational
+                  program and Founding Director of Harris Invictus Academy in
+                  Croydon, South London, she has dedicated her career to
+                  empowering families and individuals to realise their fullest
+                  potential.
+                </p>
+              </div>
+
+              <div class="key-points">
+                <h4>Awards & Recognition</h4>
+                <ul>
+                  <li>
+                    Black Achievement Award for Best Dyslexic Owned Business
+                    (2021)
+                  </li>
+                  <li>Mother of The Year Award Winner (2019)</li>
+                  <li>
+                    No.2 on Top 50 Most Inspirational Black Women in the UK
+                    (2019)
+                  </li>
+                  <li>One of 133 Women Who Change the World (2023)</li>
+                  <li>Visionary Award at Global Black Impact Summit (2024)</li>
+                  <li>The Global Queen Award (2025)</li>
+                </ul>
+              </div>
+
+              <div class="key-points">
+                <h4>Media Features & Exhibitions</h4>
+                <ul>
+                  <li>
+                    Featured in Arabian Business, Fabulous Magazine, and The
+                    Voice
+                  </li>
+                  <li>
+                    Ben Salmi family featured in National Portrait Gallery
+                    (2025-2026)
+                  </li>
+                  <li>Ben Salmi family TEDx Talk (2025)</li>
+                  <li>
+                    Acknowledged during Chelsea FC Edge of The Box 6th
+                    Anniversary
+                  </li>
+                </ul>
+              </div>
+
+              <div class="speaker-links">
+                <a
+                  href="https://linktr.ee/SabrinaBenSalmi"
+                  class="btn"
+                  target="_blank"
+                  ><i class="fas fa-external-link-alt"></i> Sabrina's
+                  Linktree</a
+                >
+                <a
+                  href="https://linktr.ee/thebensalmifamily"
+                  class="btn"
+                  target="_blank"
+                  ><i class="fas fa-external-link-alt"></i> Family Linktree</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Ben Salmi Children Section -->
+          <div class="key-points" style="margin-top: 40px">
+            <h3>The "Fantastic 5" - Ben Salmi Children</h3>
+            <div
+              class="speakers-grid"
+              style="
+                margin-top: 20px;
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+              "
+            >
+              <!-- Lashai -->
+              <div class="speaker-card">
+                <div class="speaker-info">
+                  <h4>Lashai Ben Salmi</h4>
+                  <p>
+                    Author of 8+ books, founder of Stepping Stones Publishing,
+                    co-founder of HallyuCon, RSA Fellow, UN Women UK Delegate.
+                  </p>
+                  <a
+                    href="https://www.lifeaccordingtolashai.com"
+                    class="btn"
+                    target="_blank"
+                    ><i class="fas fa-external-link-alt"></i> Website</a
+                  >
+                </div>
+              </div>
+
+              <!-- Tray-Sean -->
+              <div class="speaker-card">
+                <div class="speaker-info">
+                  <h4>Tray-Sean Ben Salmi</h4>
+                  <p>
+                    Author of 11+ books, founder of Influencer Publishing,
+                    creator of I'm That KID™ program, financial education
+                    advocate.
+                  </p>
+                  <a
+                    href="https://linktr.ee/traysean"
+                    class="btn"
+                    target="_blank"
+                    ><i class="fas fa-external-link-alt"></i> Linktree</a
+                  >
+                </div>
+              </div>
+
+              <!-- Yasmine -->
+              <div class="speaker-card">
+                <div class="speaker-info">
+                  <h4>Yasmine Ben Salmi</h4>
+                  <p>
+                    Author of 12+ books, founder of The Choice Is Yours
+                    Publishing, member of Association of Surgeons of Great
+                    Britain and Ireland.
+                  </p>
+                  <a
+                    href="https://linktr.ee/YasmineBenSalmi"
+                    class="btn"
+                    target="_blank"
+                    ><i class="fas fa-external-link-alt"></i> Linktree</a
+                  >
+                </div>
+              </div>
+
+              <!-- Paolo -->
+              <div class="speaker-card">
+                <div class="speaker-info">
+                  <h4>Paolo Ben Salmi</h4>
+                  <p>
+                    Known as Pint Size Adventurer™, climate activist, author of
+                    11+ books, founder of Adventurous Publishing.
+                  </p>
+                  <a
+                    href="https://linktr.ee/AuthorPaolobensalmi"
+                    class="btn"
+                    target="_blank"
+                    ><i class="fas fa-external-link-alt"></i> Linktree</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Program Section -->
+    <section class="program" id="program">
+      <div class="container">
+        <h2>Program Structure</h2>
+        <div class="program-timeline">
+          <div class="program-item">
+            <div class="program-time">1:30 - 2:00 PM</div>
+            <div class="program-details">
+              <h3>Opening Ceremony & Keynote Address</h3>
+              <p>Welcome remarks and setting the stage for the summit</p>
+            </div>
+          </div>
+          <div class="program-item">
+            <div class="program-time">2:00 - 2:30 PM</div>
+            <div class="program-details">
+              <h3>Panel Discussion: Breaking Barriers</h3>
+              <p>Identifying challenges facing out-of-school children</p>
+            </div>
+          </div>
+          <div class="program-item">
+            <div class="program-time">2:30 - 3:00 PM</div>
+            <div class="program-details">
+              <h3>Solution Framework & Consensus Statement</h3>
+              <p>Developing actionable recommendations</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2>Contact Information</h2>
+        <div class="contact-info">
+          <p>For inquiries and registration, please contact:</p>
+          <p><strong>Mercy Gilbert & Princess Katerina</strong></p>
+          <p><i class="fas fa-envelope"></i> Email: mercy415@icloud.com</p>
+          <p><i class="fas fa-phone"></i> Phone: +44 7494 676106</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">Global Education Summit</div>
+          <p class="footer-tagline">
+            "Breaking Barriers: Empowering Out-of-School Children through
+            Education"
+          </p>
+          <p>Organized by African British Business Forum</p>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Global Education Summit. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Modal functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        // Get all "Read More" buttons
+        const readMoreButtons = document.querySelectorAll(".read-more");
+
+        // Get all modals
+        const modals = document.querySelectorAll(".speaker-modal");
+
+        // Get all close buttons
+        const closeButtons = document.querySelectorAll(".close-modal");
+
+        // Add click event to each "Read More" button
+        readMoreButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const speakerId = this.getAttribute("data-speaker");
+            const modal = document.getElementById(`${speakerId}-modal`);
+
+            if (modal) {
+              modal.style.display = "block";
+              document.body.style.overflow = "hidden"; // Prevent scrolling
+
+              // Add active class after a small delay for animation
+              setTimeout(() => {
+                modal.classList.add("active");
+              }, 10);
+            }
+          });
+        });
+
+        // Add click event to close buttons
+        closeButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const modal = this.closest(".speaker-modal");
+            modal.classList.remove("active");
+
+            // Wait for animation to complete before hiding
+            setTimeout(() => {
+              modal.style.display = "none";
+              document.body.style.overflow = "auto"; // Re-enable scrolling
+            }, 300);
+          });
+        });
+
+        // Close modal when clicking outside the content
+        window.addEventListener("click", function (event) {
+          modals.forEach((modal) => {
+            if (event.target === modal) {
+              modal.classList.remove("active");
+
+              // Wait for animation to complete before hiding
+              setTimeout(() => {
+                modal.style.display = "none";
+                document.body.style.overflow = "auto"; // Re-enable scrolling
+              }, 300);
+            }
+          });
+        });
+
+        // Close modal with Escape key
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            modals.forEach((modal) => {
+              if (modal.style.display === "block") {
+                modal.classList.remove("active");
+
+                // Wait for animation to complete before hiding
+                setTimeout(() => {
+                  modal.style.display = "none";
+                  document.body.style.overflow = "auto"; // Re-enable scrolling
+                }, 300);
+              }
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
