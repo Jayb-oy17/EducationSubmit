@@ -8,30 +8,122 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+
+    <!-- SWIPER.JS  -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <!-- Header Section -->
-    <header>
-      <div class="container">
-        <div class="header-content" data-aos="fade-up" data-aos-duration="1000">
-          <h1>Global Education Summit</h1>
-          <p class="subtitle">
-            "Breaking Barriers: Empowering Out-of-School Children through
-            Education"
-          </p>
-          <p>Organized by African British Business Forum</p>
+    <header class="hero-slider">
+      <div class="swiper headerSwiper">
+        <div class="swiper-wrapper">
+          <!-- Slide 1 -->
+          <div
+            class="swiper-slide hero-slide"
+            style="background-image: url('slide1.jpg')"
+          >
+            <div class="slide-overlay"></div>
+            <div class="container">
+              <div
+                class="header-content"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+              >
+                <h1>Global Education Summit</h1>
+                <p class="subtitle">
+                  "Breaking Barriers: Empowering Out-of-School Children through
+                  Education"
+                </p>
+                <p>Organized by African British Business Forum</p>
 
-          <div class="date-venue">
-            <h3>
-              <i class="far fa-calendar-alt"></i> Day 1: 27th November 2025,
-              1:30-3:00 PM
-            </h3>
-            <p><i class="fas fa-map-marker-alt"></i> Parliament, London</p>
+                <div class="date-venue">
+                  <h3>
+                    <i class="far fa-calendar-alt"></i> Day 1: 27th November
+                    2025, 1:30-3:00 PM
+                  </h3>
+                  <p>
+                    <i class="fas fa-map-marker-alt"></i> Parliament, London
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div
+            class="swiper-slide hero-slide"
+            style="background-image: url('slide2.jpg')"
+          >
+            <div class="slide-overlay"></div>
+            <div class="container">
+              <div
+                class="header-content"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+              >
+                <h1>Global Education Summit</h1>
+                <p class="subtitle">
+                  "Breaking Barriers: Empowering Out-of-School Children through
+                  Education"
+                </p>
+                <p>Organized by African British Business Forum</p>
+
+                <div class="date-venue">
+                  <h3>
+                    <i class="far fa-calendar-alt"></i> Day 1: 27th November
+                    2025, 1:30-3:00 PM
+                  </h3>
+                  <p>
+                    <i class="fas fa-map-marker-alt"></i> Parliament, London
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div
+            class="swiper-slide hero-slide"
+            style="background-image: url('slide3.jpg')"
+          >
+            <div class="slide-overlay"></div>
+            <div class="container">
+              <div
+                class="header-content"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+              >
+                <h1>Global Education Summit</h1>
+                <p class="subtitle">
+                  "Breaking Barriers: Empowering Out-of-School Children through
+                  Education"
+                </p>
+                <p>Organized by African British Business Forum</p>
+
+                <div class="date-venue">
+                  <h3>
+                    <i class="far fa-calendar-alt"></i> Day 1: 27th November
+                    2025, 1:30-3:00 PM
+                  </h3>
+                  <p>
+                    <i class="fas fa-map-marker-alt"></i> Parliament, London
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+
+        <!-- Swiper Controls -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
       </div>
     </header>
 
@@ -130,7 +222,7 @@
             <div class="program-time">1:30 - 2:00 PM</div>
             <div class="program-details">
               <h3>Opening Ceremony & Keynote Address</h3>
-              <p>Welcome remarks and setting the stage for the summit</p>
+              <p>Welcome remarks and setting the stage for the summit <br> <strong>Speaker: Ian Turner</strong></p>
             </div>
           </div>
           <div
@@ -155,6 +247,18 @@
             <div class="program-details">
               <h3>Solution Framework & Consensus Statement</h3>
               <p>Developing actionable recommendations</p>
+            </div>
+          </div>
+          <div
+            class="program-item"
+            data-aos="fade-right"
+            data-aos-duration="600"
+            data-aos-delay="400"
+          >
+            <div class="program-time">28th November</div>
+            <div class="program-details">
+              <h3>Global Education Excellence Awards Ceremony</h3>
+              <p>Celebrating outstanding contributions to education and honoring champions of out-of-school children</p>
             </div>
           </div>
         </div>
@@ -235,10 +339,7 @@
             data-aos-delay="200"
           >
             <div class="speaker-image">
-              <img
-                src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
-                alt="H.E. Karisa Nzai Menza"
-              />
+              <img src="Guest/guest1.jpeg" alt="H.E. Karisa Nzai Menza" />
             </div>
             <div class="speaker-info">
               <h3>H.E. Karisa Nzai Menza</h3>
@@ -265,10 +366,7 @@
             data-aos-delay="250"
           >
             <div class="speaker-image">
-              <img
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
-                alt="Patrick Passley"
-              />
+              <img src="Guest/guest2.jpeg" alt="Patrick Passley" />
             </div>
             <div class="speaker-info">
               <h3>Patrick Passley LVO</h3>
@@ -289,6 +387,37 @@
             </div>
           </div>
 
+          <!-- king -->
+          <div
+            class="speaker-card royal-speaker"
+            data-aos="zoom-in"
+            data-aos-duration="600"
+            data-aos-delay="250"
+          >
+            <div class="speaker-image royal-image">
+              <img
+                src="Guest/guest11.jpeg"
+                alt="His Royal Majesty King Otumfuo Nana Osei Tutu II"
+              />
+            </div>
+            <div class="speaker-info royal-info">
+              <h3 class="royal-title">
+                His Royal Majesty King Otumfuo Nana Osei Tutu II
+              </h3>
+              <p class="speaker-role royal-role">
+                Asantehene, King of the Ashanti Kingdom
+              </p>
+              <p class="speaker-bio royal-bio">
+                The 16th Asantehene, custodian of the Golden Stool and spiritual
+                leader of the Ashanti people, His Royal Majesty continues the
+                legacy of one of Africa's most revered monarchies. A
+                distinguished statesman and visionary leader, he has championed
+                education, cultural preservation, and sustainable development
+                throughout Ghana and beyond.
+              </p>
+            </div>
+          </div>
+
           <!-- Speaker 3 -->
           <div
             class="speaker-card"
@@ -297,10 +426,7 @@
             data-aos-delay="300"
           >
             <div class="speaker-image">
-              <img
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
-                alt="Baroness Sandip Verma"
-              />
+              <img src="Guest/guest3.webp" alt="Baroness Sandip Verma" />
             </div>
             <div class="speaker-info">
               <h3>Baroness Sandip Verma</h3>
@@ -327,10 +453,7 @@
             data-aos-delay="350"
           >
             <div class="speaker-image">
-              <img
-                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-                alt="Ian Turner"
-              />
+              <img src="Guest/guest4.jpeg" alt="Ian Turner" />
             </div>
             <div class="speaker-info">
               <h3>Ian Turner</h3>
@@ -356,10 +479,7 @@
             data-aos-delay="400"
           >
             <div class="speaker-image">
-              <img
-                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
-                alt="Dr Yvonne Thompson"
-              />
+              <img src="Guest/guest5.jpeg" alt="Dr Yvonne Thompson" />
             </div>
             <div class="speaker-info">
               <h3>Dr Yvonne Thompson CBE DL</h3>
@@ -385,10 +505,7 @@
             data-aos-delay="450"
           >
             <div class="speaker-image">
-              <img
-                src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
-                alt="Sabrina Ben Salmi"
-              />
+              <img src="Guest/guest6.jpeg" alt="Sabrina Ben Salmi" />
             </div>
             <div class="speaker-info">
               <h3>Sabrina Ben Salmi</h3>
@@ -417,10 +534,7 @@
             data-aos-delay="500"
           >
             <div class="speaker-image">
-              <img
-                src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
-                alt="Lashai Ben Salmi"
-              />
+              <img src="Guest/guest7.jpeg" alt="Lashai Ben Salmi" />
             </div>
             <div class="speaker-info">
               <h3>Lashai Ben Salmi</h3>
@@ -447,10 +561,7 @@
             data-aos-delay="550"
           >
             <div class="speaker-image">
-              <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
-                alt="Tray-Sean Ben Salmi"
-              />
+              <img src="Guest/guest8.jpeg" alt="Tray-Sean Ben Salmi" />
             </div>
             <div class="speaker-info">
               <h3>Tray-Sean Ben Salmi</h3>
@@ -480,10 +591,7 @@
             data-aos-delay="600"
           >
             <div class="speaker-image">
-              <img
-                src="https://images.unsplash.com/photo-1536922246289-88c42f957773?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80"
-                alt="Yasmine Ben Salmi"
-              />
+              <img src="Guest/guest9.jpeg" alt="Yasmine Ben Salmi" />
             </div>
             <div class="speaker-info">
               <h3>Yasmine Ben Salmi</h3>
@@ -513,10 +621,7 @@
             data-aos-delay="650"
           >
             <div class="speaker-image">
-              <img
-                src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80"
-                alt="Paolo Ben Salmi"
-              />
+              <img src="Guest/guest10.jpeg" alt="Paolo Ben Salmi" />
             </div>
             <div class="speaker-info">
               <h3>Paolo Ben Salmi</h3>
@@ -536,7 +641,6 @@
       </div>
     </section>
 
-    <!-- ALL YOUR ORIGINAL MODALS EXACTLY AS THEY WERE -->
     <!-- Karisa Nzai Menza Modal -->
     <div class="speaker-modal" id="karisa-modal">
       <div class="modal-content">
@@ -547,10 +651,7 @@
         <div class="modal-body">
           <div class="modal-speaker-content">
             <div class="modal-speaker-image">
-              <img
-                src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
-                alt="H.E. Karisa Nzai Menza"
-              />
+              <img src="Guest/guest1.jpeg" alt="H.E. Karisa Nzai Menza" />
             </div>
             <div class="modal-speaker-info">
               <h3>
@@ -618,10 +719,7 @@
         <div class="modal-body">
           <div class="modal-speaker-content">
             <div class="modal-speaker-image">
-              <img
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
-                alt="Patrick Passley"
-              />
+              <img src="Guest/guest2.jpeg" alt="Patrick Passley" />
             </div>
             <div class="modal-speaker-info">
               <h3>Education Management & Diversity Consultant</h3>
@@ -681,10 +779,7 @@
         <div class="modal-body">
           <div class="modal-speaker-content">
             <div class="modal-speaker-image">
-              <img
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
-                alt="Baroness Sandip Verma"
-              />
+              <img src="Guest/guest3.webp" alt="Baroness Sandip Verma" />
             </div>
             <div class="modal-speaker-info">
               <h3>
@@ -758,10 +853,7 @@
         <div class="modal-body">
           <div class="modal-speaker-content">
             <div class="modal-speaker-image">
-              <img
-                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-                alt="Ian Turner"
-              />
+              <img src="Guest/guest4.jpeg" alt="Ian Turner" />
             </div>
             <div class="modal-speaker-info">
               <h3>Royal Expert & International TV Broadcaster</h3>
@@ -827,10 +919,7 @@
         <div class="modal-body">
           <div class="modal-speaker-content">
             <div class="modal-speaker-image">
-              <img
-                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
-                alt="Dr Yvonne Thompson"
-              />
+              <img src="Guest/guest5.jpeg" alt="Dr Yvonne Thompson" />
             </div>
             <div class="modal-speaker-info">
               <h3>Entrepreneur, Author & International Speaker</h3>
@@ -917,10 +1006,7 @@
         <div class="modal-body">
           <div class="modal-speaker-content">
             <div class="modal-speaker-image">
-              <img
-                src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
-                alt="Sabrina Ben Salmi"
-              />
+              <img src="Guest/guest6.jpeg" alt="Sabrina Ben Salmi" />
             </div>
             <div class="modal-speaker-info">
               <h3>Business & Personal Development Consultant</h3>
@@ -1009,10 +1095,7 @@
         <div class="modal-body">
           <div class="modal-speaker-content">
             <div class="modal-speaker-image">
-              <img
-                src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
-                alt="Lashai Ben Salmi"
-              />
+              <img src="Guest/guest7.jpeg" alt="Lashai Ben Salmi" />
             </div>
             <div class="modal-speaker-info">
               <h3>Author, Publisher & Cultural Connectivity Advocate</h3>
@@ -1090,10 +1173,7 @@
         <div class="modal-body">
           <div class="modal-speaker-content">
             <div class="modal-speaker-image">
-              <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
-                alt="Tray-Sean Ben Salmi"
-              />
+              <img src="Guest/guest8.jpeg" alt="Tray-Sean Ben Salmi" />
             </div>
             <div class="modal-speaker-info">
               <h3>Young Entrepreneur & Financial Education Advocate</h3>
@@ -1157,10 +1237,7 @@
         <div class="modal-body">
           <div class="modal-speaker-content">
             <div class="modal-speaker-image">
-              <img
-                src="https://images.unsplash.com/photo-1536922246289-88c42f957773?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80"
-                alt="Yasmine Ben Salmi"
-              />
+              <img src="Guest/guest9.jpeg" alt="Yasmine Ben Salmi" />
             </div>
             <div class="modal-speaker-info">
               <h3>Author, Medical Advocate & Entrepreneur</h3>
@@ -1247,10 +1324,7 @@
         <div class="modal-body">
           <div class="modal-speaker-content">
             <div class="modal-speaker-image">
-              <img
-                src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80"
-                alt="Paolo Ben Salmi"
-              />
+              <img src="Guest/guest10.jpeg" alt="Paolo Ben Salmi" />
             </div>
             <div class="modal-speaker-info">
               <h3>Climate Activist & Youth Advocate</h3>
@@ -1308,7 +1382,7 @@
       </div>
     </div>
 
-    <!-- Contact Section -->
+    <!-- CONATCT SECTION -->
     <section class="contact" id="contact">
       <div class="container">
         <h2 data-aos="fade-up" data-aos-duration="800">Contact Information</h2>
@@ -1320,8 +1394,48 @@
         >
           <p>For inquiries and registration, please contact:</p>
           <p><strong>Mercy Gilbert & Princess Katerina</strong></p>
-          <p><i class="fas fa-envelope"></i> Email: mercy415@icloud.com</p>
-          <p><i class="fas fa-phone"></i> Phone: +44 7494 676106</p>
+
+          <div class="contact-links">
+            <!-- Email Link -->
+            <a
+              href="mailto:mercy415@icloud.com"
+              class="contact-link email-link"
+            >
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-details">
+                <span class="contact-label">Email</span>
+                <span class="contact-value">mercy415@icloud.com</span>
+              </div>
+            </a>
+
+            <!-- WhatsApp Link -->
+            <a
+              href="https://wa.me/447494676106"
+              target="_blank"
+              class="contact-link whatsapp-link"
+            >
+              <div class="contact-icon">
+                <i class="fab fa-whatsapp"></i>
+              </div>
+              <div class="contact-details">
+                <span class="contact-label">WhatsApp</span>
+                <span class="contact-value">+44 7494 676106</span>
+              </div>
+            </a>
+
+            <!-- Phone Link (Fallback) -->
+            <a href="tel:+447494676106" class="contact-link phone-link">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="contact-details">
+                <span class="contact-label">Phone</span>
+                <span class="contact-value">+44 7494 676106</span>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -1345,6 +1459,8 @@
 
     <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- SWIPER.JS  -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
       // Initialize AOS
       AOS.init({
@@ -1429,6 +1545,39 @@
             });
           }
         });
+      });
+
+      // Initialize Header Swiper
+      const headerSwiper = new Swiper(".headerSwiper", {
+        loop: true,
+        speed: 1000,
+        autoplay: {
+          delay: 2000,
+          disableOnInteraction: false,
+        },
+        effect: "fade",
+        fadeEffect: {
+          crossFade: true,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+          dynamicBullets: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+
+      // Pause autoplay on hover
+      const headerSlider = document.querySelector(".headerSwiper");
+      headerSlider.addEventListener("mouseenter", function () {
+        headerSwiper.autoplay.stop();
+      });
+
+      headerSlider.addEventListener("mouseleave", function () {
+        headerSwiper.autoplay.start();
       });
     </script>
   </body>
