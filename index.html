@@ -222,7 +222,10 @@
             <div class="program-time">1:30 - 2:00 PM</div>
             <div class="program-details">
               <h3>Opening Ceremony & Keynote Address</h3>
-              <p>Welcome remarks and setting the stage for the summit <br> <strong>Speaker: Ian Turner</strong></p>
+              <p>
+                Welcome remarks and setting the stage for the summit <br />
+                <strong>Speaker: Ian Turner</strong>
+              </p>
             </div>
           </div>
           <div
@@ -258,7 +261,10 @@
             <div class="program-time">28th November</div>
             <div class="program-details">
               <h3>Global Education Excellence Awards Ceremony</h3>
-              <p>Celebrating outstanding contributions to education and honoring champions of out-of-school children</p>
+              <p>
+                Celebrating outstanding contributions to education and honoring
+                champions of out-of-school children
+              </p>
             </div>
           </div>
         </div>
@@ -1462,48 +1468,146 @@
     <!-- SWIPER.JS  -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-      // Initialize AOS
-      AOS.init({
-        duration: 800,
-        once: true, // Animation only happens once
-        offset: 100, // Offset (in px) from the original trigger point
-        delay: 0, // Values from 0 to 3000, with step 50ms
-        easing: "ease", // Default easing for AOS animations
-      });
+  // Initialize AOS
+  AOS.init({
+    duration: 800,
+    once: true, // Animation only happens once
+    offset: 100, // Offset (in px) from the original trigger point
+    delay: 0, // Values from 0 to 3000, with step 50ms
+    easing: "ease", // Default easing for AOS animations
+  });
 
-      // Your original modal functionality remains exactly the same
-      document.addEventListener("DOMContentLoaded", function () {
-        // Get all "Read More" buttons
-        const readMoreButtons = document.querySelectorAll(".read-more");
+  // Auto Lazy Loading Function
+  function enableAutoLazyLoading() {
+    // Get all images on the page
+    const allImages = document.querySelectorAll("img");
 
-        // Get all modals
-        const modals = document.querySelectorAll(".speaker-modal");
+    // Add loading="lazy" to all images that don't have it already
+    allImages.forEach((img) => {
+      if (!img.hasAttribute("loading")) {
+        img.setAttribute("loading", "lazy");
+      }
+    });
 
-        // Get all close buttons
-        const closeButtons = document.querySelectorAll(".close-modal");
+    // Enhanced lazy loading with Intersection Observer for better performance
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
 
-        // Add click event to each "Read More" button
-        readMoreButtons.forEach((button) => {
-          button.addEventListener("click", function () {
-            const speakerId = this.getAttribute("data-speaker");
-            const modal = document.getElementById(`${speakerId}-modal`);
+    if ("IntersectionObserver" in window) {
+      const imageObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
 
-            if (modal) {
-              modal.style.display = "block";
-              document.body.style.overflow = "hidden"; // Prevent scrolling
+              // Add loaded class for CSS transitions
+              img.classList.add("lazy-loaded");
 
-              // Add active class after a small delay for animation
-              setTimeout(() => {
-                modal.classList.add("active");
-              }, 10);
+              // Optional: Load higher quality version if data-src is available
+              if (img.dataset.src) {
+                img.src = img.dataset.src;
+                delete img.dataset.src;
+              }
+
+              observer.unobserve(img);
             }
           });
-        });
+        },
+        {
+          rootMargin: "50px 0px", // Start loading 50px before image enters viewport
+          threshold: 0.1,
+        }
+      );
 
-        // Add click event to close buttons
-        closeButtons.forEach((button) => {
-          button.addEventListener("click", function () {
-            const modal = this.closest(".speaker-modal");
+      lazyImages.forEach((img) => {
+        imageObserver.observe(img);
+      });
+    }
+
+    console.log(`Auto lazy loading enabled for ${lazyImages.length} images`);
+  }
+
+  // Preload critical images for better user experience
+  function preloadCriticalImages() {
+    // Preload first slide and first speaker image
+    const criticalImages = [
+      'slide1.jpg',
+      'Guest/guest1.jpeg'
+    ];
+    
+    criticalImages.forEach(src => {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'image';
+      link.href = src;
+      document.head.appendChild(link);
+    });
+  }
+
+  // Initialize when DOM is ready
+  document.addEventListener("DOMContentLoaded", function () {
+    // Enable lazy loading for all images
+    enableAutoLazyLoading();
+    
+    // Preload critical above-the-fold images
+    preloadCriticalImages();
+
+    // Your existing modal functionality
+    const readMoreButtons = document.querySelectorAll(".read-more");
+    const modals = document.querySelectorAll(".speaker-modal");
+    const closeButtons = document.querySelectorAll(".close-modal");
+
+    // Add click event to each "Read More" button
+    readMoreButtons.forEach((button) => {
+      button.addEventListener("click", function () {
+        const speakerId = this.getAttribute("data-speaker");
+        const modal = document.getElementById(`${speakerId}-modal`);
+
+        if (modal) {
+          modal.style.display = "block";
+          document.body.style.overflow = "hidden"; // Prevent scrolling
+
+          // Add active class after a small delay for animation
+          setTimeout(() => {
+            modal.classList.add("active");
+          }, 10);
+        }
+      });
+    });
+
+    // Add click event to close buttons
+    closeButtons.forEach((button) => {
+      button.addEventListener("click", function () {
+        const modal = this.closest(".speaker-modal");
+        modal.classList.remove("active");
+
+        // Wait for animation to complete before hiding
+        setTimeout(() => {
+          modal.style.display = "none";
+          document.body.style.overflow = "auto"; // Re-enable scrolling
+        }, 300);
+      });
+    });
+
+    // Close modal when clicking outside the content
+    window.addEventListener("click", function (event) {
+      modals.forEach((modal) => {
+        if (event.target === modal) {
+          modal.classList.remove("active");
+
+          // Wait for animation to complete before hiding
+          setTimeout(() => {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto"; // Re-enable scrolling
+          }, 300);
+        }
+      });
+    });
+
+    // Close modal with Escape key
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        modals.forEach((modal) => {
+          if (modal.style.display === "block") {
             modal.classList.remove("active");
 
             // Wait for animation to complete before hiding
@@ -1511,74 +1615,44 @@
               modal.style.display = "none";
               document.body.style.overflow = "auto"; // Re-enable scrolling
             }, 300);
-          });
-        });
-
-        // Close modal when clicking outside the content
-        window.addEventListener("click", function (event) {
-          modals.forEach((modal) => {
-            if (event.target === modal) {
-              modal.classList.remove("active");
-
-              // Wait for animation to complete before hiding
-              setTimeout(() => {
-                modal.style.display = "none";
-                document.body.style.overflow = "auto"; // Re-enable scrolling
-              }, 300);
-            }
-          });
-        });
-
-        // Close modal with Escape key
-        document.addEventListener("keydown", function (event) {
-          if (event.key === "Escape") {
-            modals.forEach((modal) => {
-              if (modal.style.display === "block") {
-                modal.classList.remove("active");
-
-                // Wait for animation to complete before hiding
-                setTimeout(() => {
-                  modal.style.display = "none";
-                  document.body.style.overflow = "auto"; // Re-enable scrolling
-                }, 300);
-              }
-            });
           }
         });
-      });
+      }
+    });
 
-      // Initialize Header Swiper
-      const headerSwiper = new Swiper(".headerSwiper", {
-        loop: true,
-        speed: 1000,
-        autoplay: {
-          delay: 2000,
-          disableOnInteraction: false,
-        },
-        effect: "fade",
-        fadeEffect: {
-          crossFade: true,
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-          dynamicBullets: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
+    // Initialize Header Swiper
+    const headerSwiper = new Swiper(".headerSwiper", {
+      loop: true,
+      speed: 1000,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },
+      effect: "fade",
+      fadeEffect: {
+        crossFade: true,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        dynamicBullets: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
 
-      // Pause autoplay on hover
-      const headerSlider = document.querySelector(".headerSwiper");
-      headerSlider.addEventListener("mouseenter", function () {
-        headerSwiper.autoplay.stop();
-      });
+    // Pause autoplay on hover
+    const headerSlider = document.querySelector(".headerSwiper");
+    headerSlider.addEventListener("mouseenter", function () {
+      headerSwiper.autoplay.stop();
+    });
 
-      headerSlider.addEventListener("mouseleave", function () {
-        headerSwiper.autoplay.start();
-      });
-    </script>
+    headerSlider.addEventListener("mouseleave", function () {
+      headerSwiper.autoplay.start();
+    });
+  });
+</script>
   </body>
 </html>

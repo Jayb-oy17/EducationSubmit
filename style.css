@@ -1064,3 +1064,23 @@ footer {
     padding: 20px;
   }
 }
+
+img[loading="lazy"] {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+img.lazy-loaded {
+  opacity: 1;
+}
+
+/* Optional: Add a subtle blur effect while loading */
+img[loading="lazy"]:not(.lazy-loaded) {
+  filter: blur(2px);
+}
+
+/* Optional: Add a loading placeholder background */
+img[loading="lazy"]:not(.lazy-loaded) {
+  background: #f5f5f5;
+  border-radius: 4px;
+}
