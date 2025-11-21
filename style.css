@@ -176,10 +176,10 @@ p {
   position: relative;
   z-index: 2;
   color: #ffffff;
-  text-align: center;
   width: 100%;
   max-width: 900px;
   padding: 20px;
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -189,7 +189,6 @@ p {
   margin-bottom: 1.5rem;
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
   color: #ffffff;
-  text-align: center;
 }
 
 .header-content .subtitle {
@@ -259,24 +258,6 @@ p {
 .headerSwiper .swiper-button-prev::after {
   font-size: 1.3rem;
   font-weight: bold;
-}
-
-.headerSwiper .swiper-pagination {
-  bottom: 20px;
-}
-
-.headerSwiper .swiper-pagination-bullet {
-  width: 10px;
-  height: 10px;
-  background: rgba(255, 255, 255, 0.6);
-  opacity: 0.7;
-  transition: var(--transition);
-}
-
-.headerSwiper .swiper-pagination-bullet-active {
-  background: #ffffff;
-  opacity: 1;
-  transform: scale(1.2);
 }
 
 /* About Section */
@@ -620,6 +601,7 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .close-modal {
@@ -646,12 +628,14 @@ p {
   padding: 0;
   flex: 1;
   overflow-y: auto;
+  display: flex;
 }
 
 .modal-speaker-content {
   display: flex;
   flex-wrap: wrap;
-  height: 100%;
+  width: 100%;
+  min-height: min-content;
 }
 
 .modal-speaker-image {
@@ -659,9 +643,10 @@ p {
   min-width: 350px;
   background: var(--light-gray);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   padding: 40px;
+  position: relative;
 }
 
 .modal-speaker-image img {
@@ -670,13 +655,14 @@ p {
   height: auto;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
+  object-fit: cover;
 }
 
 .modal-speaker-info {
   flex: 2;
   min-width: 400px;
   padding: 40px;
-  overflow-y: auto;
+  height: auto;
 }
 
 .modal-speaker-info h3 {
@@ -893,8 +879,18 @@ img.lazy-loaded {
     flex-direction: column;
   }
 
-  .modal-speaker-image,
-  .modal-speaker-info {
+  .modal-speaker-image {
+    min-height: 300px;
+    align-items: center;
+    padding: 30px;
+  }
+
+  .modal-speaker-image img {
+    max-width: 250px;
+  }
+
+  .modal-speaker-info,
+  .modal-speaker-image {
     min-width: 100%;
   }
 }
@@ -956,11 +952,12 @@ img.lazy-loaded {
   }
 
   .modal-speaker-image {
-    padding: 30px;
+    padding: 20px;
+    min-height: 250px;
   }
 
   .modal-speaker-info {
-    padding: 30px;
+    padding: 25px;
   }
 
   .headerSwiper .swiper-button-next,
@@ -1039,5 +1036,13 @@ img.lazy-loaded {
   .modal-speaker-info {
     min-width: 100%;
     padding: 20px;
+  }
+
+  .modal-speaker-image {
+    min-height: 200px;
+  }
+
+  .modal-speaker-image img {
+    max-width: 200px;
   }
 }
